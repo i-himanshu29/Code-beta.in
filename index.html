@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeBeta Launch Countdown</title>
+  <title>CodeBeta.in Launch Countdown</title>
   <style>
     * {
       box-sizing: border-box;
@@ -21,19 +22,74 @@
       color: #ffffff;
       font-family: "Poppins", sans-serif;
       text-align: center;
+      overflow: hidden;
     }
+
+    /* main_title (brand_name) */
+    .logo {
+      font-size: 4.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ff007f, #ff6a00, #ffd200);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: lowercase;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 25px rgba(255, 100, 150, 0.4), 0 0 40px rgba(255, 150, 50, 0.3);
+      animation: glow_pulse 2.5s ease-in-out infinite alternate;
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+    }
+
+    /* glowing animation */
+    @keyframes glow_pulse {
+      0% {
+        text-shadow: 0 0 20px rgba(255, 0, 150, 0.4),
+          0 0 40px rgba(255, 100, 50, 0.3),
+          0 0 60px rgba(255, 200, 0, 0.2);
+        transform: scale(1);
+      }
+
+      100% {
+        text-shadow: 0 0 30px rgba(255, 80, 150, 0.6),
+          0 0 60px rgba(255, 120, 50, 0.5),
+          0 0 80px rgba(255, 220, 50, 0.4);
+        transform: scale(1.03);
+      }
+    }
+
 
     h1 {
       font-size: 3rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      background: linear-gradient(90deg, #22d3ee, #3b82f6, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 700;
       letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       opacity: 0.9;
-      max-width: 600px;
-      margin-bottom: 1.5rem;
+      max-width: 650px;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out;
+      line-height: 1.5;
     }
 
     .countdown {
@@ -49,7 +105,12 @@
       border-radius: 12px;
       min-width: 90px;
       backdrop-filter: blur(6px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .countdown div:hover {
+      transform: translateY(-5px);
     }
 
     .label {
@@ -67,38 +128,39 @@
       letter-spacing: 0.5px;
     }
 
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #60a5fa;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .highlight {
-      color: #38bdf8;
-    }
-
     @media (max-width: 600px) {
+      .logo {
+        font-size: 2.8rem;
+      }
+
       h1 {
         font-size: 2rem;
       }
+
       .countdown {
         gap: 12px;
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
+
       .countdown div {
         min-width: 70px;
         padding: 15px;
       }
+
+      p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="logo">Code<span class="highlight">Beta</span></div>
-  <h1>🚀 Launching Soon!</h1>
-  <p>Prepare to level up your <strong>DSA</strong> and <strong>Interview Skills</strong> with CodeBeta — your all-in-one learning and coding platform.</p>
+  <div class="logo">CodeBeta</div>
+  <h1>🚀 Launching Soon</h1>
+  <p>Get ready to strengthen your <strong>DSA</strong> skills and ace your <strong>interviews</strong> with
+    <strong>CodeBeta.in</strong> — the ultimate platform for coding preparation and practice.
+  </p>
 
   <div class="countdown">
     <div>
@@ -119,11 +181,11 @@
     </div>
   </div>
 
-  <footer>© 2025 CodeBeta • DSA & Interview Preparation Platform</footer>
+  <footer>© 2025 CodeBeta.in • DSA & Interview Preparation Platform</footer>
 
   <script>
     // Set your launch date (YYYY-MM-DDTHH:MM:SS)
-    const launchDate = new Date("2025-11-01T00:00:00").getTime();
+    const launchDate = new Date("2025-11-30T00:00:00").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -142,13 +204,20 @@
       if (distance < 0) {
         clearInterval(timer);
         document.body.innerHTML = `
-          <div class="logo">Code<span class="highlight">Beta</span></div>
-          <h1>🎉 We Are Live Now!</h1>
-          <p>Start your journey of mastering DSA and cracking top tech interviews with <strong>CodeBeta</strong>.</p>
-          <footer>© 2025 CodeBeta</footer>
+          <div class="logo" style="font-size:3.5rem;">CodeBeta.in</div>
+          <h1 style="background: linear-gradient(90deg, #22d3ee, #3b82f6, #a855f7);
+                     -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent;
+                     font-size: 3rem;
+                     font-weight: 800;">
+            🎉 We Are Live Now!
+          </h1>
+          <p style="font-size:1.3rem;">Start your journey of mastering DSA and cracking top tech interviews with <strong>CodeBeta.in</strong>.</p>
+          <footer>© 2025 CodeBeta.in</footer>
         `;
       }
     }, 1000);
   </script>
 </body>
+
 </html>
