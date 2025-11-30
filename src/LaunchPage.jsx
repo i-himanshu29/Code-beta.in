@@ -10,7 +10,7 @@ export default function LaunchPage() {
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
-    const launchDate = new Date("2025-11-30T00:00:00").getTime();
+    const launchDate = new Date("2025-12-31T00:00:00").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
